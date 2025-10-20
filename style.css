@@ -1,0 +1,54 @@
+:root {
+    --color-primary: #e50914;
+    --primary-hover: #e50914;
+    --color-bg: #0b0b0e;
+    --color-surface: #121218;
+    --color-text: #f5f6f7;
+    --color-muted: #a1a6ae;
+    --color-accent: #22d3ee;
+}
+
+body {
+    cursor: url("images/cursor.png") 0 0, auto;
+}
+
+.bg-primary {
+    background-color: var(--color-primary);
+}
+.bg-primary-hover:hover {
+    background-color: var(--primary-hover);
+}
+.text-primary {
+    color: var(--color-primary);
+}
+
+.border-primary {
+    border-color: var(--color-primary);
+}
+
+.bg-surface {
+    background-color: var(--color-surface);
+}
+
+.bg-app {
+    background-color: var(--color-bg);
+}
+
+.text-app {
+    color: var(--color-text);
+}
+
+.text-muted {
+    color: var(--color-muted);
+}
+
+.ring-primary {
+    --tw-ring-color: var(--color-primary);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
