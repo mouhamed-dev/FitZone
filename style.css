@@ -12,6 +12,29 @@ body {
     cursor: url("images/cursor.png") 0 0, auto;
 }
 
+::selection {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-text);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
 .bg-primary {
     background-color: var(--color-primary);
 }
@@ -50,5 +73,13 @@ html {
     scroll-behavior: smooth;
 }
 
+
+/* style.css */
+.bg-primary-alpha-20 {
+  /* Fallback pour navigateurs sans color-mix */
+  background-color: rgba(229, 9, 20, 0.2);
+  /* Override avec color-mix si disponible (utilise la variable --color-primary) */
+  background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
 
 
