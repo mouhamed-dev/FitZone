@@ -39,11 +39,11 @@
                 </a>
                 <nav class="hidden md:flex items-center gap-6">
                     <a href="#accueil"
-                        class="rounded-md p-2 text-white hover:text-primary hover:bg-white/5 transition-colors duration-200">Accueil</a>
-                    <a href="#apropos" class="hover:text-primary transition-colors hover:bg-white/5 rounded-md p-2">A
+                        class="rounded-md p-2 hover:bg-white/5 transition-colors duration-200">Accueil</a>
+                    <a href="#apropos" class="hover:bg-white/5 rounded-md p-2">A
                         propos</a>
                     <a href="#services"
-                        class="hover:text-primary transition-colors hover:bg-white/5 rounded-md p-2">Services</a>
+                        class="hover:bg-white/5 rounded-md p-2">Services</a>
                     <a href="#tarifs"
                         class="hover:text-primary transition-colors hover:bg-white/5 rounded-md p-2">Tarifs</a>
                     <div class="relative" id="pagesDropdown">
@@ -57,8 +57,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
-                        <ul id="pagesMenu"
-                            class="absolute right-0 z-10 hidden mt-2 w-48 rounded-md border border-white/10 bg-white/5 p-2 shadow-lg">
+                        <ul id="pagesMenu" class="absolute right-0 z-10 hidden w-48 rounded-md border border-white/10 bg-white/5 p-2 shadow-lg"
+                            class="">
                             <li><a href="#notre-equipe"
                                     class="block px-2 py-1 rounded hover:bg-white/10 transition-colors">Notre équipe</a>
                             </li>
@@ -127,7 +127,7 @@
     </header>
 
     <main>
-        <section id="accueil" class="relative -mt-12 md:-mt-16 overflow-hidden">
+        <section id="accueil" class="relative -mt-12 md:-mt-16 overflow-hidden scroll-mt-16 lg:scroll-mt-0">
             <div class="absolute inset-0 -z-10">
                 <div class="absolute -top-32 -left-32 h-96 w-96 rounded-full blur-3xl opacity-20"
                     style="background: radial-gradient(closest-side, var(--color-primary), transparent);"></div>
@@ -184,7 +184,7 @@
         </section>
 
         <!-- À propos -->
-        <section id="apropos" class="relative -pt-16 overflow-hidden">
+        <section id="apropos" class="relative overflow-hidden scroll-mt-16 lg:scroll-mt-0">
             <div class="absolute inset-0 -z-10">
                 <div class="absolute -top-28 -right-16 h-80 w-80 rounded-full blur-3xl opacity-20"
                     style="background: radial-gradient(closest-side, var(--color-accent), transparent);"></div>
@@ -335,7 +335,7 @@
         </section>
 
         <!-- Services -->
-        <section id="services" class="relative -pt-16 overflow-hidden">
+        <section id="services" class="relative overflow-hidden scroll-mt-16 lg:scroll-mt-0">
             <div class="absolute inset-0 -z-10">
                 <!-- <div class="absolute -top-24 -left-24 h-80 w-80 rounded-full blur-3xl opacity-20"
                     style="background: radial-gradient(closest-side, var(--color-accent), transparent);"></div> -->
@@ -488,7 +488,7 @@
         </section>
 
         <!-- Tarifs -->
-        <section id="tarifs" class="relative overflow-hidden">
+        <section id="tarifs" class="relative overflow-hidden scroll-mt-16 lg:scroll-mt-0">
             <div class="absolute inset-0 -z-10">
                 <div class="absolute -top-24 -right-24 h-80 w-80 rounded-full blur-3xl opacity-20"
                     style="background: radial-gradient(closest-side, var(--color-primary), transparent);"></div>
@@ -625,7 +625,7 @@
 
 
         <!-- Notre équipe -->
-        <section id="notre-equipe" class="relative overflow-hidden">
+        <section id="notre-equipe" class="relative overflow-hidden scroll-mt-16 lg:scroll-mt-0">
             <div class="absolute inset-0 -z-10">
                 <div class="absolute -top-24 -left-24 h-80 w-80 rounded-full blur-3xl opacity-20"
                     style="background: radial-gradient(closest-side, var(--color-accent), transparent);"></div>
@@ -827,7 +827,7 @@
 
 
         <!-- Galerie photos -->
-        <section id="galerie" class="relative overflow-hidden">
+        <section id="galerie" class="relative overflow-hidden scroll-mt-16 lg:scroll-mt-0">
             <div class="absolute inset-0 -z-10">
                 <div class="absolute -top-24 -left-24 h-80 w-80 rounded-full blur-3xl opacity-20"
                     style="background: radial-gradient(closest-side, var(--color-accent), transparent);"></div>
@@ -855,7 +855,7 @@
 
                     <div class="mt-6 grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-4">
 
-                        <!-- Exemple image -->
+                        <!-- Equipement et installation -->
 
                         <div class="relative group cursor-pointer overflow-hidden rounded-xl" onclick="openImage(this)">
                             <img src="images/salle.png" alt=""
@@ -904,8 +904,7 @@
                                 class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             </div>
                         </div>
-
-                        <!-- Ajoute les autres images ici -->
+                        
                     </div>
 
                 </div>
@@ -1033,10 +1032,9 @@
                         <div id="fullscreenViewer"
                             class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50">
                             <img id="fullscreenImage" src="" alt="Image"
-                                class="max-w-[70%] max-h-[70%] rounded-lg shadow-lg transition-all duration-600 ease-in-out scale-95 opacity-0">
+                                class="max-w-[90%] sm:max-w-[80%] lg:max-w-[70%] max-h-[90%] sm:max-h-[80%] lg:max-h-[70%] rounded-lg shadow-lg transition-all duration-600 ease-in-out scale-95 opacity-0">
                         </div>
                     </section>
-
 
                     <script>
                         const viewer = document.getElementById('fullscreenViewer');
@@ -1046,7 +1044,6 @@
                             fullscreenImage.src = el.querySelector('img').src;
                             viewer.classList.remove('hidden');
 
-                            // Animation d’apparition
                             setTimeout(() => {
                                 fullscreenImage.classList.remove('scale-95', 'opacity-0');
                                 fullscreenImage.classList.add('scale-100', 'opacity-100');
@@ -1054,7 +1051,6 @@
                         }
 
                         viewer.addEventListener('click', () => {
-                            // Animation de disparition fluide
                             fullscreenImage.classList.remove('scale-100', 'opacity-100');
                             fullscreenImage.classList.add('scale-95', 'opacity-0');
 
@@ -1063,8 +1059,6 @@
                             }, 300);
                         });
                     </script>
-
-
 
                     <div class="mt-8 flex justify-center">
                         <a href="#contact"
@@ -1076,7 +1070,7 @@
         </section>
 
 
-        <section id="avis" class="relative">
+        <section id="avis" class="relative scroll-mt-16 lg:scroll-mt-0">
             <div class="absolute inset-0 -z-10 hidden sm:block"
                 style="background-image: url('images/1.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
             </div>
@@ -1213,7 +1207,7 @@
         </section>
 
 
-        <section id="blog" class="relative overflow-hidden scroll-mt-16">
+        <section id="blog" class="relative overflow-hidden scroll-mt-16 lg:scroll-mt-0">
             <div class="absolute inset-0 -z-10">
                 <div class="absolute -top-24 -left-24 h-80 w-80 rounded-full blur-3xl opacity-20"
                     style="background: radial-gradient(closest-side, var(--color-accent), transparent);"></div>
@@ -1410,7 +1404,7 @@
         </section>
 
 
-        <section id="contact" class="relative overflow-hidden scroll-mt-0 md:scroll-mt-24 lg:scroll-mt-16">
+        <section id="contact" class="relative overflow-hidden scroll-mt-16 lg:scroll-mt-0">
             <div class="absolute inset-0 -z-10">
                 <div class="absolute -top-24 -left-24 h-80 w-80 rounded-full blur-3xl opacity-20"
                     style="background: radial-gradient(closest-side, var(--color-accent), transparent);"></div>
@@ -1436,12 +1430,12 @@
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
                                     <label for="prenom" class="block text-sm text-muted mb-1">Prénom</label>
-                                    <input id="prenom" name="prenom" type="text" autocomplete="given-name" required
+                                    <input id="prenom" name="prenom" type="text" placeholder="Votre prénom" autocomplete="given-name" required
                                         class="w-full rounded-lg bg-white/10 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/60">
                                 </div>
                                 <div>
                                     <label for="nom" class="block text-sm text-muted mb-1">Nom</label>
-                                    <input id="nom" name="nom" type="text" autocomplete="family-name" required
+                                    <input id="nom" name="nom" type="text" placeholder="Votre nom" autocomplete="family-name" required
                                         class="w-full rounded-lg bg-white/10 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/60">
                                 </div>
                             </div>
@@ -1451,13 +1445,13 @@
                                     <label for="telephone" class="block text-sm text-muted mb-1">Téléphone</label>
                                     <input id="telephone" name="telephone" type="tel" inputmode="tel" required
                                         class="w-full rounded-lg bg-white/10 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/60"
-                                        placeholder="+221 77 000 00 00">
+                                        placeholder="+221 77 473 13 41">
                                 </div>
                                 <div>
                                     <label for="email" class="block text-sm text-muted mb-1">Email</label>
                                     <input id="email" name="email" type="email" autocomplete="email" required
                                         class="w-full rounded-lg bg-white/10 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/60"
-                                        placeholder="toi@example.com">
+                                        placeholder="adresse@example.com">
                                 </div>
                             </div>
 
@@ -1560,7 +1554,7 @@
         </section>
 
 
-        <section class="text-center">
+        <section class="text-center scroll-mt-16 lg:scroll-mt-0">
             <div class="bg-primary p-8 text-white">
                 <h3 class="text-2xl font-bold mb-4">Abonnez-vous à notre newsletter</h3>
                 <div class="flex justify-center">
@@ -1588,7 +1582,7 @@
 
 
     <!-- Footer -->
-    <footer class="bg-app py-7">
+    <footer class="bg-app py-7 scroll-mt-16 lg:scroll-mt-0">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="space-y-4">
@@ -1660,69 +1654,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script src="script.js"></script>
-    <script>
-        const btn = document.getElementById('menuBtn');
-        const menu = document.getElementById('mobileMenu');
-        btn?.addEventListener('click', () => {
-            const willHide = !menu.classList.contains('hidden');
-            menu.classList.toggle('hidden');
-            if (willHide) {
-                // Reset mobile submenu state when closing menu
-                mPagesPanel?.classList.add('hidden');
-                mPagesChevron?.classList.remove('rotate-180');
-            }
-        });
 
-        // Desktop dropdown
-        const pagesDropdown = document.getElementById('pagesDropdown');
-        const pagesBtn = document.getElementById('pagesBtn');
-        const pagesMenu = document.getElementById('pagesMenu');
-        const pagesChevron = document.getElementById('pagesChevron');
-        pagesBtn?.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isHidden = pagesMenu.classList.contains('hidden');
-            pagesMenu.classList.toggle('hidden');
-            pagesBtn.setAttribute('aria-expanded', String(isHidden));
-            pagesChevron?.classList.toggle('rotate-180', isHidden);
-        });
-        // Open on hover (desktop)
-        pagesDropdown?.addEventListener('mouseenter', () => {
-            pagesMenu?.classList.remove('hidden');
-            pagesBtn?.setAttribute('aria-expanded', 'true');
-            pagesChevron?.classList.add('rotate-180');
-        });
-        pagesDropdown?.addEventListener('mouseleave', () => {
-            pagesMenu?.classList.add('hidden');
-            pagesBtn?.setAttribute('aria-expanded', 'false');
-            pagesChevron?.classList.remove('rotate-180');
-        });
-        document.addEventListener('click', (e) => {
-            if (!pagesDropdown?.contains(e.target)) {
-                if (!pagesMenu?.classList.contains('hidden')) {
-                    pagesMenu?.classList.add('hidden');
-                    pagesBtn?.setAttribute('aria-expanded', 'false');
-                    pagesChevron?.classList.remove('rotate-180');
-                }
-            }
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                pagesMenu?.classList.add('hidden');
-                pagesBtn?.setAttribute('aria-expanded', 'false');
-                pagesChevron?.classList.remove('rotate-180');
-            }
-        });
-
-        // Mobile dropdown for Pages
-        const mPagesBtn = document.getElementById('mPagesBtn');
-        const mPagesPanel = document.getElementById('mPagesPanel');
-        const mPagesChevron = document.getElementById('mPagesChevron');
-        mPagesBtn?.addEventListener('click', () => {
-            const willOpen = mPagesPanel.classList.contains('hidden');
-            mPagesPanel.classList.toggle('hidden');
-            mPagesChevron?.classList.toggle('rotate-180', willOpen);
-        });
-    </script>
 </body>
-
 </html>

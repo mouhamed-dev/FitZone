@@ -14,38 +14,96 @@
         e.stopPropagation();
     }
 
-    // Mobile menu functionality
-const btn = document.getElementById('menuBtn');
-const menu = document.getElementById('mobileMenu');
-let lastScroll = window.scrollY;
 
-// Toggle menu
-function toggleMenu(force = null) {
+    document.addEventListener("DOMContentLoaded", () => {
+
+  // --- ELEMENTS ---
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  const pagesDropdown = document.getElementById('pagesDropdown');
+  const pagesBtn = document.getElementById('pagesBtn');
+  const pagesMenu = document.getElementById('pagesMenu');
+  const pagesChevron = document.getElementById('pagesChevron');
+  const mPagesBtn = document.getElementById('mPagesBtn');
+  const mPagesPanel = document.getElementById('mPagesPanel');
+  const mPagesChevron = document.getElementById('mPagesChevron');
+
+  // --- TOGGLE MENU MOBILE ---
+  function toggleMenu(force = null) {
     const willHide = force !== null ? force : !menu.classList.contains('hidden');
     menu.classList.toggle('hidden', willHide);
-    
+
     if (willHide) {
-        // Reset mobile submenu state when closing menu
-        const mPagesPanel = document.getElementById('mPagesPanel');
-        const mPagesChevron = document.getElementById('mPagesChevron');
-        mPagesPanel?.classList.add('hidden');
-        mPagesChevron?.classList.remove('rotate-180');
+      // Ferme le sous-menu Pages mobile si menu se ferme
+      mPagesPanel?.classList.add('hidden');
+      mPagesChevron?.classList.remove('rotate-180');
     }
-}
+  }
 
-// Click handler for menu button
-btn?.addEventListener('click', () => toggleMenu());
+  // --- Bouton hamburger ---
+  btn?.addEventListener('click', () => toggleMenu());
 
-// Close menu when clicking on a link
-menu?.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A') {
-        toggleMenu(true);
-    }
-});
+  // Fermer menu mobile au clic sur un lien
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => toggleMenu(true));
+  });
 
-// Close menu on scroll
-window.addEventListener('scroll', () => {
-    if (!menu.classList.contains('hidden')) {
-        toggleMenu(true);
-    }
+  // Fermer menu mobile en scrollant
+  window.addEventListener('scroll', () => {
+    if (!menu.classList.contains('hidden')) toggleMenu(true);
+  });
+
+  // --- DROPDOWN DESKTOP "Pages" ---
+  if (pagesDropdown && pagesBtn && pagesMenu) {
+
+    // Ouvre/Ferme sur clic
+    pagesBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isHidden = pagesMenu.classList.contains('hidden');
+      pagesMenu.classList.toggle('hidden', !isHidden);
+      pagesChevron?.classList.toggle('rotate-180', isHidden);
+    });
+
+    // Ouvre sur hover (desktop uniquement)
+    pagesDropdown.addEventListener('mouseenter', () => {
+      if (window.innerWidth >= 1024) { // lg breakpoint
+        pagesMenu.classList.remove('hidden');
+        pagesChevron?.classList.add('rotate-180');
+      }
+    });
+
+    pagesDropdown.addEventListener('mouseleave', () => {
+      if (window.innerWidth >= 1024) {
+        pagesMenu.classList.add('hidden');
+        pagesChevron?.classList.remove('rotate-180');
+      }
+    });
+
+    // Fermer si clic à l’extérieur
+    document.addEventListener('click', (e) => {
+      if (!pagesDropdown.contains(e.target)) {
+        pagesMenu.classList.add('hidden');
+        pagesChevron?.classList.remove('rotate-180');
+      }
+    });
+
+    // Fermer dropdown si clic sur un lien interne
+    pagesMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        pagesMenu.classList.add('hidden');
+        pagesChevron?.classList.remove('rotate-180');
+      });
+    });
+  }
+
+  // --- DROPDOWN MOBILE "Pages" ---
+  if (mPagesBtn && mPagesPanel) {
+    mPagesBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const willOpen = mPagesPanel.classList.contains('hidden');
+      mPagesPanel.classList.toggle('hidden');
+      mPagesChevron?.classList.toggle('rotate-180', willOpen);
+    });
+  }
+
 });

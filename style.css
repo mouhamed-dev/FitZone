@@ -81,5 +81,3 @@ html {
   /* Override avec color-mix si disponible (utilise la variable --color-primary) */
   background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
-
-
