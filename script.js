@@ -131,3 +131,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+
+function themeToggle(event) {
+  event.preventDefault();
+  alert("Oups 😒, le changement de thème n'est pas encore disponible.");
+  event.stopPropagation();
+}
+
+function prog(event) {
+  event.preventDefault();
+  alert("Oups 😒, les programmes ne sont pas encore disponibles.");
+  event.stopPropagation();
+}
