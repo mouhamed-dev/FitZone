@@ -76,8 +76,6 @@ html {
 
 /* style.css */
 .bg-primary-alpha-20 {
-  /* Fallback pour navigateurs sans color-mix */
   background-color: rgba(229, 9, 20, 0.2);
-  /* Override avec color-mix si disponible (utilise la variable --color-primary) */
   background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
