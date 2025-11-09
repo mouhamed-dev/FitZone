@@ -18,11 +18,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                    primary: '#e50914',
-                },
+                        primary: '#e50914',
+                    },
                     fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] }
                 }
             }
@@ -30,8 +31,10 @@
     </script>
 
     <meta property="og:title" content="FitZone Dakar" />
-    <meta name="description" content="Repousse tes limites chez FitZone Dakar - Salle de sport haut de gamme avec coachs certifiés et équipements modernes. Rejoins-nous pour transformer ton corps et ton esprit !" />
-    <meta property="og:image" content="https://raw.githubusercontent.com/mouhamed-dev/FitZone/28009bb8420334fe6d6fc42cbfb4bec08639eb63/images/FitZone.png" />
+    <meta name="description"
+        content="Repousse tes limites chez FitZone Dakar - Salle de sport haut de gamme avec coachs certifiés et équipements modernes. Rejoins-nous pour transformer ton corps et ton esprit !" />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/mouhamed-dev/FitZone/28009bb8420334fe6d6fc42cbfb4bec08639eb63/images/FitZone.png" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mouhamed-dev.github.io/FitZone/" />
     <meta property="og:site_name" content="FitZone Dakar" />
@@ -53,10 +56,8 @@
                         class="rounded-md p-2 hover:bg-white/5 transition-colors duration-200">Accueil</a>
                     <a href="#apropos" class="hover:bg-white/5 hidden lg:inline rounded-md p-2">A
                         propos</a>
-                    <a href="#services"
-                        class="hover:bg-white/5 rounded-md p-2">Services</a>
-                    <a href="#tarifs"
-                        class="transition-colors hover:bg-white/5 rounded-md p-2">Tarifs</a>
+                    <a href="#services" class="hover:bg-white/5 rounded-md p-2">Services</a>
+                    <a href="#tarifs" class="transition-colors hover:bg-white/5 rounded-md p-2">Tarifs</a>
                     <div class="relative" id="pagesDropdown">
                         <button id="pagesBtn"
                             class="relative inline-flex items-center justify-center rounded-md p-2 hover:bg-white/5 focus:outline-none"
@@ -68,31 +69,25 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
-                        <ul id="pagesMenu" class="absolute right-0 z-10 hidden w-48 rounded-md border border-white/10 bg-white/5 p-2 shadow-lg"
-                            class="">
-                            <li><a href="#notre-equipe"
-                                    class="block px-2 py-1 rounded hover:bg-white/10 transition-colors">Notre équipe</a>
-                            </li>
-                            <li><a href="#galerie"
-                                    class="block px-2 py-1 rounded hover:bg-white/10 transition-colors">Galerie
-                                    photos</a></li>
-                            <li><a href="#avis" class="block px-2 py-1 rounded hover:bg-white/10 transition-colors">Avis
-                                    clients</a>
-                            </li>
-                            <li><a href="#blog"
-                                    class="block px-2 py-1 rounded hover:bg-white/10 transition-colors">Blog</a></li>
+                        <ul id="pagesMenu" class="absolute right-0 z-10 hidden w-48 rounded-md border border-white/10 bg-white/5 p-2 shadow-lg">
+                            <li><a href="#notre-equipe" class="block px-2 py-1 rounded hover:bg-white/10 transition-colors">Notre équipe</a></li>
+                            <li><a href="#planning" class="block px-2 py-1 rounded hover:bg-white/10 transition-colors">Planning du jour</a></li>
+                            <li><a href="#evaluation" class="block px-2 py-1 rounded hover:bg-white/10 transition-colors">Evaluation</a></li>
+                            <li><a href="#galerie" class="block px-2 py-1 rounded hover:bg-white/10 transition-colors">Galerie photos</a></li>
+                            <li><a href="#avis" class="block px-2 py-1 rounded hover:bg-white/10 transition-colors">Avis clients</a></li>
+                            <li><a href="#blog" class="block px-2 py-1 rounded hover:bg-white/10 transition-colors">Blog</a></li>
                         </ul>
                     </div>
-                    <a href="#contact"
-                        class="transition-colors hover:bg-white/5 rounded-md p-2">Contact</a>
+                    <a href="#contact" class="transition-colors hover:bg-white/5 rounded-md p-2">Contact</a>
 
-                         <div class="hidden md:flex items-center gap-3">
-                            <!-- Theme toggle -->
-                            <button id="themeToggle" onclick="themeToggle(event)" aria-label="Changer le thème" title="Mode jour"
-                                class="ml-2 hidden lg:inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
-                                <i id="themeIconSun" class="fas fa-sun text-white "></i>
-                            </button>
-                        </div>
+                    <div class="hidden md:flex items-center gap-3">
+                        <!-- Theme toggle -->
+                        <button id="themeToggle" aria-label="Changer le thème" title="Mode jour"
+                            class="ml-2 hidden lg:inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
+                            <i id="themeIconSun" class="fas fa-sun text-white hidden"></i>
+                            <i id="themeIconMoon" class="fas fa-moon text-white"></i>
+                        </button>
+                    </div>
                 </nav>
                 <div class="hidden md:flex items-center gap-3">
                     <a href="#connexion"
@@ -111,7 +106,8 @@
                     </svg>
                 </button>
             </div>
-            <div id="mobileMenu" class="md:hidden hidden fixed inset-x-0 top-16 bg-app backdrop-blur supports-[backdrop-filter]:bg-app/70 border-t border-white/10 py-3 px-4 shadow-lg z-40">
+            <div id="mobileMenu"
+                class="md:hidden hidden fixed inset-x-0 top-16 bg-app backdrop-blur supports-[backdrop-filter]:bg-app/70 border-t border-white/10 py-3 px-4 shadow-lg z-40">
                 <nav class="flex flex-col gap-2">
                     <a href="#accueil" class="px-2 py-2 rounded hover:bg-white/5">Accueil</a>
                     <a href="#apropos" class="px-2 py-2 rounded hover:bg-white/5">A propos</a>
@@ -128,6 +124,8 @@
                     </button>
                     <div id="mPagesPanel" class="hidden pl-4 flex flex-col gap-1">
                         <a href="#notre-equipe" class="px-2 py-1 rounded hover:bg-white/5">Notre équipe</a>
+                        <a href="#planning" class="px-2 py-1 rounded hover:bg-white/5">Planning du jour</a>
+                        <a href="#evaluation" class="px-2 py-1 rounded hover:bg-white/5">Evaluation</a>
                         <a href="#galerie" class="px-2 py-1 rounded hover:bg-white/5">Galerie photos</a>
                         <a href="#avis" class="px-2 py-1 rounded hover:bg-white/5">Avis clients</a>
                         <a href="#blog" class="px-2 py-1 rounded hover:bg-white/5">Blog</a>
@@ -844,6 +842,280 @@
             </div>
         </section>
 
+        <section id="planning" class="relative overflow-hidden scroll-mt-16 lg:scroll-mt-0">
+            <div class="absolute inset-0 -z-10">
+                <div class="absolute -top-24 -right-24 h-80 w-80 rounded-full blur-3xl opacity-20"
+                    style="background: radial-gradient(closest-side, var(--color-primary), transparent);"></div>
+                <div class="absolute -bottom-24 -left-24 h-80 w-80 rounded-full blur-3xl opacity-20"
+                    style="background: radial-gradient(closest-side, var(--color-accent), transparent);"></div>
+            </div>
+
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+                <div class="flex justify-center text-center">
+                    <div class="max-w-3xl">
+                        <span
+                            class="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-sm text-muted ring-1 ring-inset ring-white/10">Planning
+                            du jour</span>
+                        <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">Programme et
+                            cours d'aujourd'hui</h2>
+                        <p class="mt-4 text-lg text-muted max-w-prose mx-auto">Retrouve les créneaux, les cours en cours
+                            et ceux à venir. Rejoins une séance ou planifie la suivante.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3 justify-center mt-10 mb-8">
+                    <button type="button" data-filter="all" class="filter-btn px-4 py-2 rounded-full text-sm bg-primary text-white">Tous</button>
+                    <button type="button" data-filter="debutant" class="filter-btn px-4 py-2 rounded-full text-sm bg-white/10 hover:bg-primary text-white">Débutant</button>
+                    <button type="button" data-filter="intermediaire"class="filter-btn px-4 py-2 rounded-full text-sm bg-white/10 hover:bg-primary text-white">Intermédiaire</button>
+                    <button type="button" data-filter="avance" class="filter-btn px-4 py-2 rounded-full text-sm bg-white/10 hover:bg-primary text-white">Avancé</button>
+                </div>
+
+            <div class="overflow-x-auto scrollbar-hide pb-6" id="scroll-container">
+                <!-- <div class="mt-12 grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3"> -->
+                     <div class="mt-10 flex gap-6 md:gap-8 min-w-max px-4">
+                    <article class="cours-card tous w-[360px] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-lg flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="text-sm text-muted px-2 py-1 rounded bg-white/5 border border-white/10">08:30</span>
+                            <span class="text-xs px-2 py-1 rounded bg-primary/20 text-primary">En cours</span>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold">Cardio Training</h3>
+                        <p class="mt-2 text-sm text-muted">Intensité modérée. Idéal pour démarrer la journée et brûler des calories.</p>
+                        <div class="mt-4 space-y-2 text-sm text-muted">
+                            <div class="flex items-center gap-2"><i class="fas fa-user text-primary"></i><span>Coach Rose Mendy</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-location-dot text-primary"></i><span>Salle 1</span></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-signal text-primary"></i><span>Niveau : Tous</span></div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#cardio-training" onclick="planning(event)"
+                                class="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-white hover:opacity-90 transition">Rejoindre</a>
+                        </div>
+                    </article>
+
+                    <article class="cours-card tous w-[360px] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-lg flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="text-sm text-muted px-2 py-1 rounded bg-white/5 border border-white/10">10:00</span>
+                            <span class="text-xs px-2 py-1 rounded bg-primary/20 text-primary">En cours</span>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold">Pilates & Mobilité</h3>
+                        <p class="mt-2 text-sm text-muted">Travail du gainage, de la respiration et de la posture pour renforcer le corps en profondeur.
+                        </p>
+                        <div class="mt-4 space-y-2 text-sm text-muted">
+                            <div class="flex items-center gap-2"><i class="fas fa-user text-primary"></i><span>Coach
+                                    Sophie Mbengue</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-location-dot text-primary"></i><span>Salle 2</span></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-signal text-primary"></i><span>Niveau :
+                                    Tous</span></div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#pilates-mobilite" onclick="planning(event)"
+                                class="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-white hover:opacity-90 transition">Rejoindre</a>
+                        </div>
+                    </article>
+
+                    <article class="cours-card debutant w-[360px] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-lg flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="text-sm text-muted px-2 py-1 rounded bg-white/5 border border-white/10">12:00</span>
+                            <span class="text-xs px-2 py-1 rounded bg-white/10 text-white">À venir</span>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold">Musculation guidée</h3>
+                        <p class="mt-2 text-sm text-muted">Apprentissage des mouvements clés avec corrections et suivi.
+                        </p>
+                        <div class="mt-4 space-y-2 text-sm text-muted">
+                            <div class="flex items-center gap-2"><i class="fas fa-user text-primary"></i><span>Coach Germain</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-location-dot text-primary"></i><span>Salle 2</span></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-signal text-primary"></i><span>Niveau : Débutant</span></div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#musculation-guidee" onclick="planning(event)"
+                                class="inline-flex items-center justify-center rounded-lg border border-white/20 px-4 py-2 hover:border-primary hover:text-primary transition">Me
+                                prévenir</a>
+                        </div>
+                    </article>
+
+
+                    <article class="cours-card intermediaire w-[360px] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-lg flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="text-sm text-muted px-2 py-1 rounded bg-white/5 border border-white/10">15:00</span>
+                            <span class="text-xs px-2 py-1 rounded bg-white/10 text-white">À venir</span>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold">Boxe & Endurance</h3>
+                        <p class="mt-2 text-sm text-muted">Travail combiné de cardio et coordination à travers des exercices inspirés du kickboxing.</p>
+                        <div class="mt-4 space-y-2 text-sm text-muted">
+                            <div class="flex items-center gap-2"><i class="fas fa-user text-primary"></i><span>Coach Pascale</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-location-dot text-primary"></i><span>Salle 1</span></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-signal text-primary"></i><span>Niveau : Intermédiaire</span></div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#stretch-relax" onclick="planning(event)"
+                                class="inline-flex items-center justify-center rounded-lg border border-white/20 px-4 py-2 hover:border-primary hover:text-primary transition">Me
+                                prévenir</a>
+                        </div>
+                    </article>
+
+
+                    <article class="cours-card intermediaire w-[360px] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-lg flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="text-sm text-muted px-2 py-1 rounded bg-white/5 border border-white/10">15:30</span>
+                            <span class="text-xs px-2 py-1 rounded bg-white/10 text-white">À venir</span>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold">Danse Afro Fit</h3>
+                        <p class="mt-2 text-sm text-muted">Séance rythmée alliant cardio, coordination et fun sur des sons afro-énergétiques !</p>
+                        <div class="mt-4 space-y-2 text-sm text-muted">
+                            <div class="flex items-center gap-2"><i class="fas fa-user text-primary"></i><span>Coach Sophie Mbengue</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-location-dot text-primary"></i><span>Salle 3</span></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-signal text-primary"></i><span>Niveau : Intermédiaire</span></div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#danse-afro-fit" onclick="planning(event)"
+                                class="inline-flex items-center justify-center rounded-lg border border-white/20 px-4 py-2 hover:border-primary hover:text-primary transition">Me
+                                prévenir</a>
+                        </div>
+                    </article>
+
+                    <article class="cours-card avance w-[360px] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-lg flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="text-sm text-muted px-2 py-1 rounded bg-white/5 border border-white/10">16:00</span>
+                            <span class="text-xs px-2 py-1 rounded bg-white/10 text-white">À venir</span>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold">CrossFit Challenge</h3>
+                        <p class="mt-2 text-sm text-muted">Renforcement global avec enchaînement d’exercices fonctionnels à haute intensité.</p>
+                        <div class="mt-4 space-y-2 text-sm text-muted">
+                            <div class="flex items-center gap-2"><i class="fas fa-user text-primary"></i><span>Coach Abdoulay Sylla</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-location-dot text-primary"></i><span>CrossFit Zone</span></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-signal text-primary"></i><span>Niveau : Avancé</span></div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#stretch-relax" onclick="planning(event)"
+                                class="inline-flex items-center justify-center rounded-lg border border-white/20 px-4 py-2 hover:border-primary hover:text-primary transition">Me
+                                prévenir</a>
+                        </div>
+                    </article>
+
+                    <article class="cours-card intermediaire w-[360px] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-lg flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="text-sm text-muted px-2 py-1 rounded bg-white/5 border border-white/10">18:00</span>
+                            <span class="text-xs px-2 py-1 rounded bg-white/10 text-white">Complet</span>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold">HIIT & Bootcamp</h3>
+                        <p class="mt-2 text-sm text-muted">Séance haute intensité par intervalles pour puissance et explosivité.</p>
+                        <div class="mt-4 space-y-2 text-sm text-muted">
+                            <div class="flex items-center gap-2"><i class="fas fa-user text-primary"></i><span>Coach Babacar</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-location-dot text-primary"></i><span>Extérieur</span></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-signal text-primary"></i><span>Niveau : Intermédiaire</span></div>
+                        </div>
+                        <div class="mt-6">
+                            <button disabled
+                                class="inline-flex items-center justify-center rounded-lg px-4 py-2 bg-white/10 text-white/60 cursor-not-allowed">Inscription
+                                fermée</button>
+                        </div>
+                    </article>
+
+
+                    <article class="cours-card debutant w-[360px] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-lg flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="text-sm text-muted px-2 py-1 rounded bg-white/5 border border-white/10">20:00</span>
+                            <span class="text-xs px-2 py-1 rounded bg-white/10 text-white">À venir</span>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold">Stretch & Relax</h3>
+                        <p class="mt-2 text-sm text-muted">Séance douce pour détendre les muscles, améliorer la souplesse et relâcher les tensions.</p>
+                        <div class="mt-4 space-y-2 text-sm text-muted">
+                            <div class="flex items-center gap-2"><i class="fas fa-user text-primary"></i><span>Coach Rose Mendy</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-location-dot text-primary"></i><span>Salle 1</span></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-signal text-primary"></i><span>Niveau : Débutant</span></div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#stretch-relax" onclick="planning(event)"
+                                class="inline-flex items-center justify-center rounded-lg border border-white/20 px-4 py-2 hover:border-primary hover:text-primary transition">Me
+                                prévenir</a>
+                        </div>
+                    </article>
+
+
+                    <article class="cours-card avance w-[360px] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-lg flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="text-sm text-muted px-2 py-1 rounded bg-white/5 border border-white/10">20:00</span>
+                            <span class="text-xs px-2 py-1 rounded bg-white/10 text-white">À venir</span>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold">Powerlifting Pro</h3>
+                        <p class="mt-2 text-sm text-muted">Orienté force pure sur les mouvements clés : squat, développé couché et soulevé de terre.</p>
+                        <div class="mt-4 space-y-2 text-sm text-muted">
+                            <div class="flex items-center gap-2"><i class="fas fa-user text-primary"></i><span>Coach Abdoulay Sylla</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-location-dot text-primary"></i><span>Force Room</span></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-signal text-primary"></i><span>Niveau : Avancé</span></div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#stretch-relax" onclick="planning(event)"
+                                class="inline-flex items-center justify-center rounded-lg border border-white/20 px-4 py-2 hover:border-primary hover:text-primary transition">Me
+                                prévenir</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+        <section id="evaluation" class="relative overflow-hidden scroll-mt-16 lg:scroll-mt-0">
+            <div class="absolute inset-0 -z-10">
+                <div class="absolute -top-24 -left-24 h-80 w-80 rounded-full blur-3xl opacity-20" style="background: radial-gradient(closest-side, var(--color-accent), transparent);"></div>
+                <div class="absolute -bottom-24 -right-24 h-80 w-80 rounded-full blur-3xl opacity-20" style="background: radial-gradient(closest-side, var(--color-primary), transparent);"></div>
+            </div>
+
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+                <div class="flex justify-center text-center">
+                <div class="max-w-3xl">
+                    <span class="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-sm text-muted ring-1 ring-inset ring-white/10">Bilan forme & bien‑être</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">Évalue ton profil et reçois des recommandations</h2>
+                    <p class="mt-4 text-lg text-muted max-w-prose mx-auto">Réponds à quelques questions et obtiens des cours et programmes adaptés à tes objectifs.</p>
+                </div>
+                </div>
+
+                <div id="fit-assessment" class="mt-10 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 sm:p-8 max-w-3xl mx-auto">
+                <div id="fit-start" class="text-center space-y-6">
+                    <div class="w-16 h-16 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto">
+                    <i class="fa-solid fa-heart-pulse text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold">Prêt à démarrer ton bilan ?</h3>
+                    <p class="text-muted">5 minutes seulement pour mieux te connaître et te proposer les meilleurs cours FitZone.</p>
+                    <button type="button" class="px-6 py-3 rounded bg-primary text-white font-semibold hover:opacity-90 transition" onclick="startFitAssessment()">Commencer l'évaluation</button>
+                </div>
+
+                <div id="fit-questions" class="hidden">
+                    <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-semibold">Question <span id="fit-current">1</span> sur <span id="fit-total">8</span></h3>
+                    <div class="w-40 bg-white/10 rounded-full h-2">
+                        <div id="fit-progress" class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                    </div>
+
+                    <div id="fit-question-content" class="space-y-3"></div>
+
+                    <div class="mt-6 flex items-center justify-between">
+                    <button id="fit-prev" type="button" class="px-4 py-2 rounded border border-white/20 text-sm hover:border-primary hover:text-primary transition">← Précédent</button>
+                    <button id="fit-next" type="button" class="px-4 py-2 rounded bg-primary text-white text-sm hover:opacity-90 transition">Suivant →</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Galerie photos -->
         <section id="galerie" class="relative overflow-hidden scroll-mt-16 lg:scroll-mt-0">
@@ -923,7 +1195,7 @@
                                 class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             </div>
                         </div>
-                        
+
                     </div>
 
                 </div>
@@ -1449,12 +1721,14 @@
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
                                     <label for="prenom" class="block text-sm text-muted mb-1">Prénom</label>
-                                    <input id="prenom" name="prenom" type="text" placeholder="Votre prénom" autocomplete="given-name" required
+                                    <input id="prenom" name="prenom" type="text" placeholder="Votre prénom"
+                                        autocomplete="given-name" required
                                         class="w-full rounded-lg bg-white/10 border border-white/10 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
                                 </div>
                                 <div>
                                     <label for="nom" class="block text-sm text-muted mb-1">Nom</label>
-                                    <input id="nom" name="nom" type="text" placeholder="Votre nom" autocomplete="family-name" required
+                                    <input id="nom" name="nom" type="text" placeholder="Votre nom"
+                                        autocomplete="family-name" required
                                         class="w-full rounded-lg bg-white/10 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-primary">
                                 </div>
                             </div>
@@ -1642,12 +1916,16 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Services</h4>
                     <ul class="space-y-2 text-gray-300">
-                        <li><a href="#coaching" onclick="oups(event)" class="hover:text-[var(--color-primary)] transition-colors">Coaching
+                        <li><a href="#coaching" onclick="oups(event)"
+                                class="hover:text-[var(--color-primary)] transition-colors">Coaching
                                 Personnel</a></li>
-                        <li><a href="cours-collectifs" onclick="oups(event)" class="hover:text-[var(--color-primary)] transition-colors">Cours Collectifs</a>
+                        <li><a href="cours-collectifs" onclick="oups(event)"
+                                class="hover:text-[var(--color-primary)] transition-colors">Cours Collectifs</a>
                         </li>
-                        <li><a href="#nutrition" onclick="oups(event)" class="hover:text-[var(--color-primary)] transition-colors">Nutrition</a></li>
-                        <li><a href="#programmes-en-ligne" onclick="oups(event)" class="hover:text-[var(--color-primary)] transition-colors">Programmes en
+                        <li><a href="#nutrition" onclick="oups(event)"
+                                class="hover:text-[var(--color-primary)] transition-colors">Nutrition</a></li>
+                        <li><a href="#programmes-en-ligne" onclick="oups(event)"
+                                class="hover:text-[var(--color-primary)] transition-colors">Programmes en
                                 Ligne</a></li>
                     </ul>
                 </div>
@@ -1674,5 +1952,45 @@
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script src="script.js"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIconSun = document.getElementById('themeIconSun');
+            const themeIconMoon = document.getElementById('themeIconMoon');
+
+            // Récupère le thème enregistré
+            const savedTheme = localStorage.getItem('theme');
+
+            // Fonction pour appliquer le thème
+            function applyTheme(theme) {
+                const root = document.documentElement;
+
+                if (theme === 'light') {
+                    root.classList.add('light-theme');
+                    localStorage.setItem('theme', 'light');
+                    themeIconSun.classList.add('hidden');
+                    themeIconMoon.classList.remove('hidden');
+                } else {
+                    root.classList.remove('light-theme');
+                    localStorage.setItem('theme', 'dark');
+                    themeIconMoon.classList.add('hidden');
+                    themeIconSun.classList.remove('hidden');
+                }
+            }
+
+            // Applique le thème au chargement
+            applyTheme(savedTheme || 'dark');
+
+            // ✅ Bascule au clic sur le bouton
+            themeToggle?.addEventListener('click', () => {
+                const current = document.documentElement.classList.contains('light-theme')
+                    ? 'light'
+                    : 'dark';
+                applyTheme(current === 'light' ? 'dark' : 'light');
+            });
+        });
+
+    </script>
 </body>
+
 </html>
