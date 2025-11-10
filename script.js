@@ -392,8 +392,49 @@ function showFitDone() {
 
 
 const scrollContainer = document.getElementById("scroll-container"); 
-    const scrollMessage = document.getElementById("scroll-indicator");
+const scrollMessage = document.getElementById("scroll-indicator");
 
-    scrollContainer.addEventListener("scroll", () => {
-      scrollMessage.style.display = "none";
-    });
+scrollContainer.addEventListener("scroll", () => {
+  scrollMessage.style.display = "none";
+});
+
+
+
+
+// Loader
+const appLoader = document.querySelector('#app-loader');
+const LOADER_MIN_MS = 3000;
+let loaderShownAt = 0;
+
+function lockScroll() {
+  document.documentElement.classList.add('overflow-hidden', 'overscroll-none');
+  document.body.classList.add('overflow-hidden', 'overscroll-none');
+  document.body.setAttribute('aria-busy', 'true');
+}
+
+function unlockScroll() {
+  document.documentElement.classList.remove('overflow-hidden', 'overscroll-none');
+  document.body.classList.remove('overflow-hidden', 'overscroll-none');
+  document.body.removeAttribute('aria-busy');
+}
+
+function showLoader() {
+  if (!appLoader) return;
+  appLoader.style.display = 'flex';
+  if (!loaderShownAt) loaderShownAt = Date.now();
+  lockScroll();
+}
+
+function hideLoader() {
+  if (!appLoader) return;
+  appLoader.style.display = 'none';
+  unlockScroll();
+}
+
+showLoader();
+
+window.addEventListener('load', () => {
+  const elapsed = Date.now() - loaderShownAt;
+  const remaining = Math.max(0, LOADER_MIN_MS - elapsed);
+  setTimeout(hideLoader, remaining);
+});
