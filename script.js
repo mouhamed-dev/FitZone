@@ -389,3 +389,11 @@ function showFitDone() {
     </div>
   `;
 }
+
+
+const scrollContainer = document.getElementById("scroll-container"); 
+    const scrollMessage = document.getElementById("scroll-indicator");
+
+    scrollContainer.addEventListener("scroll", () => {
+      scrollMessage.style.display = "none";
+    });
